@@ -8,7 +8,7 @@ var cheerio=require("cheerio");
 var db = require("./models");
 
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 var app = express();
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
@@ -79,7 +79,7 @@ mongoose.connect(MONGODB_URI);
       .then(function(dbArticle) {
         // If we were able to successfully find Articles, send them back to the client
         // res.render("index",{dbArticle:dbArticle});
-        res.render("articles",{data:dbArticle})              // res.render("articles",dbArticle);
+        res.json(dbArticle)              // res.render("articles",dbArticle);
       })
       .catch(function(err) {
         // If an error occurred, send it to the client
@@ -89,9 +89,8 @@ mongoose.connect(MONGODB_URI);
   app.get("/articles/:id", function(req, res) {
     // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
     console.log(req.params.id)
-    db.Article.findOne({_id: ObjectId(req.params.id) })
-      // ..and populate all of the notes associated with it
-      .populate("note")
+    db.Article.findOne({_id:req.params.id})     // ..and populate all of the notes associated with it
+      // .populate("note")
       .then(function(dbArticle) {
         // If we were able to successfully find an Article with the given id, send it back to the client
 

@@ -34,12 +34,39 @@
     </div>
     </div>
     </div>
+<div class="modal fade" id="notes" role="dialog" style="opacity:1">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Notes for article{{this.title}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+
+      </div>
+      <div class="modal-body " style="text-align:center;font-size: 1.5em;">
+      </div>
+      <div class="modal-bodyimg " style="text-align:center;font-size: 2em;">
+      </div>
+
+      <div class="modal-footer">
+
+        <a href="#" id="savenote" class="btn btn-primary" data-dismiss="modal" >Save note
+        </a>       
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
     {{/each}}
 </div>
-    <div id="notes">
-
-    </div>
 
 <footer>
     <p>New York Times Scraper</p>

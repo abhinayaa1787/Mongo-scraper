@@ -1,4 +1,5 @@
 $(function() {
+  $("#notes").modal("hide");
     $(".saveBtn").bind("click",function(){
 var link=$(this).parent("div").find("a").attr("href");
 console.log(link);
@@ -28,6 +29,8 @@ description:description    }
         // Empty the notes from the note section
         // $("#notes").empty();
         // Save the id from the p tag
+        $("#notes").show();
+
         var thisId = $(this).parent("div").find("a").attr("data-id");
       console.log(thisId);
         // Now make an ajax call for the Article
