@@ -88,7 +88,7 @@ description:description    }
         $("#bodyinput").val("");
       });
       
-$(".deletxeArticleBtn").bind("click",function(){
+$(".deleteArticleBtn").bind("click",function(){
     var thisId = $(this).parent("div").find("a").attr("data-id");
     var article=$(this).parent("div").parent("div"); 
     console.log(article);
