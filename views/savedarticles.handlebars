@@ -1,0 +1,48 @@
+    <div>
+      <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Mongo Scraper</a>
+    </div>
+      <a href="/articles">Home</a>
+         <a href="/saved">Saved Articles</a>
+    <button class="btn btn-danger navbar-btn"><a href="/scrape">SCRAPE NEW ARTICLES!</a></button>
+        <button class="btn btn-danger navbar-btn"><a href="/delete">CLEAR ARTICLES</a></button>
+
+  </div>
+</nav>
+<div>
+  <h1 class="text-center">MONGO SCRAPER</h1>
+  <h5 class="text-center">NEW YORK TIMES EDITION</h5>
+</div>
+
+<div id="articleDiv">
+    {{#each data}}
+    <div class="container-fluid">
+        <div class="card">
+                <div class="card-header">
+      <a data-id={{this._id}} href="https://www.nytimes.com/{{this.link}}" style="margin-top:10px;padding:10px;">{{this.title}}</a>
+      <button class="btn btn-danger saveNote" style="float:right; margin:10px;">Article Notes</button>
+            <button class="btn btn-danger deleteArticleBtn" style="float:right;margin:10px;"> Delete from saved</button>
+
+    </div>
+            <div clas="card-body">
+
+    <div class="card-text">
+        {{this.description}}
+    </div>
+    </div>
+    </div>
+    </div>
+
+    {{/each}}
+</div>
+    <div id="notes">
+
+    </div>
+
+<footer>
+    <p>New York Times Scraper</p>
+</footer>
+
+<script src="/app.js"></script>
