@@ -15,7 +15,7 @@ Before running the server.js use terminal to install the above mentioned package
 
 ##### The index page has buttons and links to scrape articles from the NYT website. With axios and cheerio npm packges data is scraped!
 
-#####After scraping the data is saved in mongoDb with mongoose
+##### After scraping the data is saved in mongoDb with mongoose
 
 ##### By clicking the save article button, the selected article will be saved
 
