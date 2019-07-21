@@ -37,14 +37,15 @@
     </div>
     </div>
     </div>
-    <div class="modal fade notes" role="dialog" style="opacity:1">
+    {{/each}}
+        <div class="modal fade notes" role="dialog" style="opacity:1">
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Notes for article</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" data-dismiss="modal">x</button>
 
 
       </div>
@@ -68,7 +69,7 @@
 
 
 
-    {{/each}}
+
 </div>
 {{/if}}
 

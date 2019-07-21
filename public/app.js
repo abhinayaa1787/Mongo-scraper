@@ -61,14 +61,14 @@ $(function () {
         .then(function(data) {
           console.log(data);
           // The title of the article
-          $(".modal-body").append("<h2>" + data.title + "</h2>");
+          $(".modal-body").text( data.title );
           // An input to enter a new title
-
+$(".modal-body").append("<br>");
           // A textarea to add a new note body
           $(".modal-body").append("<textarea id='bodyinput' name='body'></textarea>");
           
           // A button to submit a new note, with the id of the article saved to it
-          $(".modal-footer").append("<button data-id=" + data._id + " class='savenote'>Save Note</button>");
+          $(".modal-footer").html("<button data-id=" + data._id + " class='savenote'>Save Note</button>");
 
           // If there's a note in the article
           if (data.note) {
@@ -79,7 +79,10 @@ $(function () {
           }
         });
     });
+$(".close").bind("click",function(){
+  $(".notes").hide();
 
+})
     $('body').on('click','.savenote',function(){
   //     alert('hi');
   //   });
@@ -95,8 +98,6 @@ console.log(body);
         method: "POST",
         url: "/saved/" + thisId,
         data: {
-          // Value taken from title input
-          // Value taken from note textarea
           body: body
         }
       })
