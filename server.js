@@ -79,11 +79,18 @@ mongoose.connect(MONGODB_URI);
       .then(function(dbArticle) {
         // If we were able to successfully find Articles, send them back to the client
         // res.render("index",{dbArticle:dbArticle});
-        res.json(dbArticle)              // res.render("articles",dbArticle);
+        res.render("articles",{data:dbArticle})              // res.render("articles",dbArticle);
       })
       .catch(function(err) {
         // If an error occurred, send it to the client
         console.log(err);
+      });
+  });
+  app.get("/articles/:id", function(req, res) {
+    db.Article.deleteOne({ _id: req.params.id })
+      .catch(function(err) {
+        // If an error occurred, send it to the client
+        res.json(err);
       });
   });
   // app.get("/saved/:id", function(req, res) {

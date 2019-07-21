@@ -4,7 +4,7 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Mongo Scraper</a>
     </div>
-    <div style="float: right">      <a href="/scrape" >Home</a>
+    <div style="float: right">      <a href="/articles" >Home</a>
          <a href="/saved" >Saved Articles</a>
              <button class="btn btn-danger navbar-btn" id="scrapeBtn" ><a href="/scrape">SCRAPE NEW ARTICLES!</a></button>
 
@@ -13,7 +13,7 @@
   </div>
 </nav>
 <div id="bgdImgDiv">
-  <h1 class="text-center">MONGO SCRAPER</h1>
+  <h1 class="text-center title">MONGO SCRAPER</h1>
   <h5 class="text-center">NEW YORK TIMES EDITION</h5>
 </div>
 
@@ -22,7 +22,7 @@
     <div class="container-fluid">
         <div class="card">
                 <div class="card-header">
-      <a data-id={{this._id}} href="https://www.nytimes.com{{this.link}}">{{this.title}}</a>
+      <a data-id={{this._id}} href="https://www.nytimes.com{{this.link}}" target="_blank">{{this.title}}</a>
       <button class="btn btn-success saveBtn" style="float:right">Save Article</button>
     </div>
             <div clas="card-body">

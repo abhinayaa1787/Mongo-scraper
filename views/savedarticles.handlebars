@@ -5,7 +5,7 @@
       <a class="navbar-brand" href="#">Mongo Scraper</a>
     </div>
     <div style="float: right">  
-          <a href="/scrape" >Home</a>
+          <a href="/articles" >Home</a>
          <a href="/saved" >Saved Articles</a>
              <button class="btn btn-danger navbar-btn" id="scrapeBtn" ><a href="/scrape">SCRAPE NEW ARTICLES!</a></button>
 
@@ -14,16 +14,17 @@
   </div>
 </nav>
 <div id="bgdImgDiv">
-  <h1 class="text-center">MONGO SCRAPER</h1>
+  <h1 class="text-center title">MONGO SCRAPER</h1>
   <h5 class="text-center">NEW YORK TIMES EDITION</h5>
 </div>
+  {{#if data}}
 
-<div id="articleDiv">
+<div id="savedarticleDiv">
     {{#each data}}
     <div class="container-fluid">
         <div class="card ">
                 <div class="card-header">
-      <a data-id={{this._id}} href="{{this.link}}" style="margin-top:10px;padding:10px;">{{this.title}}</a>
+      <a data-id={{this._id}} href="{{this.link}}" style="margin-top:10px;padding:10px;" target="_blank">{{this.title}}</a>
       <button class="btn btn-danger saveNote" style="float:right; margin:10px;">Article Notes</button>
             <button class="btn btn-danger deleteArticleBtn" style="float:right;margin:10px;"> Delete from saved</button>
 
@@ -67,6 +68,24 @@
 
     {{/each}}
 </div>
+{{/if}}
+
+{{#unless data}}
+<div id="nosavedarticleDiv">
+  <p id="yellowsavedarticleDiv"class="text-center">  Uh Oh. No saved articles. </p>
+
+<div class="card shadow">
+  <div class="card-header text-center">  Do you like to browse articles? </div>
+<div class="card-body">
+<div class="card-text text-center">
+<p><a href="/scrape" style="color:rgb(49, 118, 145)">Browse articles</a></p>
+</div>
+</div>
+</div>
+</div>
+{{/unless}}
+
+
 
 <footer>
     <p>New York Times Scraper</p>
