@@ -4,14 +4,16 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Mongo Scraper</a>
     </div>
-      <a href="/articles">Home</a>
-         <a href="/saved">Saved Articles</a>
-    <button class="btn btn-danger navbar-btn"><a href="/scrape">SCRAPE NEW ARTICLES!</a></button>
-        <button class="btn btn-danger navbar-btn"><a href="/delete">CLEAR ARTICLES</a></button>
+    <div style="float: right">  
+          <a href="/scrape" >Home</a>
+         <a href="/saved" >Saved Articles</a>
+             <button class="btn btn-danger navbar-btn" id="scrapeBtn" ><a href="/scrape">SCRAPE NEW ARTICLES!</a></button>
+
+         </div>
 
   </div>
 </nav>
-<div>
+<div id="bgdImgDiv">
   <h1 class="text-center">MONGO SCRAPER</h1>
   <h5 class="text-center">NEW YORK TIMES EDITION</h5>
 </div>
@@ -19,9 +21,9 @@
 <div id="articleDiv">
     {{#each data}}
     <div class="container-fluid">
-        <div class="card">
+        <div class="card ">
                 <div class="card-header">
-      <a data-id={{this._id}} href="https://www.nytimes.com/{{this.link}}" style="margin-top:10px;padding:10px;">{{this.title}}</a>
+      <a data-id={{this._id}} href="{{this.link}}" style="margin-top:10px;padding:10px;">{{this.title}}</a>
       <button class="btn btn-danger saveNote" style="float:right; margin:10px;">Article Notes</button>
             <button class="btn btn-danger deleteArticleBtn" style="float:right;margin:10px;"> Delete from saved</button>
 
@@ -34,27 +36,25 @@
     </div>
     </div>
     </div>
-<div class="modal fade" id="notes" role="dialog" style="opacity:1">
+<div class="modal fade notes" role="dialog" style="opacity:1">
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Notes for article{{this.title}}</h4>
+        <h4 class="modal-title">Notes for article</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
 
       </div>
       <div class="modal-body " style="text-align:center;font-size: 1.5em;">
       </div>
-      <div class="modal-bodyimg " style="text-align:center;font-size: 2em;">
-      </div>
 
       <div class="modal-footer">
 
-        <a href="#" id="savenote" class="btn btn-primary" data-dismiss="modal" >Save note
+        {{!-- <a href="#" id="savenote" class="btn btn-primary" data-dismiss="modal" >Save note
         </a>       
-         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> --}}
 
 
 

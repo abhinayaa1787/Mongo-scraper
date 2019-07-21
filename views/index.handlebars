@@ -4,10 +4,13 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Mongo Scraper</a>
     </div>
-      <a href="/">Home</a>
-         <a href="/saved">Saved Articles</a>
-    <button class="btn btn-danger navbar-btn" id="scrapeBtn"><a href="/scrape">SCRAPE NEW ARTICLES!</a></button>
-        <button class="btn btn-danger navbar-btn" id="clearBtn"><a href="/delete">CLEAR ARTICLES</a></button>
+    <div style="float: right">  
+          <a href="/" >Home</a>
+         <a href="/saved" >Saved Articles</a>
+             <button class="btn btn-danger navbar-btn" id="scrapeBtn" ><a href="/scrape">SCRAPE NEW ARTICLES!</a></button>
+
+         </div>
+
 
   </div>
 </nav>
@@ -16,21 +19,25 @@
   <h5 class="text-center">NEW YORK TIMES EDITION</h5>
 </div>
 <div id="noarticleDiv">
-  <p class="text-center">  Uh Oh. Looks like we don't have any new articles. </p>
+  <p id="yellowDiv"class="text-center">  Uh Oh. Looks like we don't have any new articles. </p>
 
-<div >
-  <p class="text-center">  What Would You Like To Do? </p>
+<div class="card shadow">
+  <div class="card-header text-center">  What Would You Like To Do? </div>
+<div class="card-body">
+<div class="card-text text-center">
+<p><a href="/scrape" style="color:rgb(49, 118, 145)">Try scraping new articles</a></p>
+<p><a href="/saved" style="color:rgb(49, 118, 145)">Go to saved articles</a></p>
 </div>
-<div class="text-center">
-<p><a href="/scrape">Try scraping new articles</a></p>
-<p><a href="/saved">Go to saved articles</a></p>
+</div>
+</div>
+
+
+
 </div>
 <footer>
     <p>New York Times Scraper</p>
 </footer>
 
-
-
 </div>
-</div>
+
 <script src="/app.js"></script>

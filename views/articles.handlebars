@@ -4,14 +4,15 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Mongo Scraper</a>
     </div>
-      <a href="/articles">Home</a>
-         <a href="/saved">Saved Articles</a>
-    <button class="btn btn-danger navbar-btn"><a href="/scrape">SCRAPE NEW ARTICLES!</a></button>
-        <button class="btn btn-danger navbar-btn"><a href="/delete">CLEAR ARTICLES</a></button>
+    <div style="float: right">      <a href="/scrape" >Home</a>
+         <a href="/saved" >Saved Articles</a>
+             <button class="btn btn-danger navbar-btn" id="scrapeBtn" ><a href="/scrape">SCRAPE NEW ARTICLES!</a></button>
+
+         </div>
 
   </div>
 </nav>
-<div>
+<div id="bgdImgDiv">
   <h1 class="text-center">MONGO SCRAPER</h1>
   <h5 class="text-center">NEW YORK TIMES EDITION</h5>
 </div>
@@ -21,8 +22,8 @@
     <div class="container-fluid">
         <div class="card">
                 <div class="card-header">
-      <a data-id={{this._id}} href="https://www.nytimes.com/{{this.link}}">{{this.title}}</a>
-      <button class="btn btn-success saveBtn">Save Article</button>
+      <a data-id={{this._id}} href="https://www.nytimes.com{{this.link}}">{{this.title}}</a>
+      <button class="btn btn-success saveBtn" style="float:right">Save Article</button>
     </div>
             <div clas="card-body">
 
